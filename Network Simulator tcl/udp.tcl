@@ -17,13 +17,13 @@ set n1 [$ns node]
 
 $ns duplex-link $n0 $n1 10Mb 1ms DropTail
 
-set udp [new Agent/UDP] #for tcp change this to TCP
+set udp [new Agent/UDP] 
 $ns attach-agent $n0 $udp
 
-set null [new Agent/Null] #for tcp change this to TCPSink
+set null [new Agent/Null] 
 $ns attach-agent $n1 $null
 
-set cbr [new Application/Traffic/CBR] #for tcp change this FTP
+set cbr [new Application/Traffic/CBR]
 $cbr attach-agent $udp
 
 $ns connect $udp $null

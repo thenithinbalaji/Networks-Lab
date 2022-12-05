@@ -1,4 +1,4 @@
-#chat app
+# run server before client
 import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -22,3 +22,5 @@ while True:
 
     conn.sendall(input("SERVER:: ").encode())
 
+conn.close()
+s.close()
